@@ -18,15 +18,9 @@ const HomeScreen = () => {
 
     return (
         <SafeAreaView style={[styles.flex, { backgroundColor: colors.background }]}>
-            {/* هدر سفارشی جدید */}
             <View style={[styles.header, { borderBottomColor: colors.border }]}>
                 <View style={styles.headerSection}>
-                    <TouchableOpacity style={[styles.profileButton, { backgroundColor: colors.surface }]}>
-                        <Icon name="person-outline" size={28} color={colors.textSecondary} />
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.headerSection}>
-                    <Text style={[styles.headerTitle, { color: colors.primary }]}>Aquafeed</Text>
+                    <Text style={[styles.headerTitle, { color: colors.primary }]}>AquaFeed Plus</Text>
                 </View>
                 <View style={styles.headerSection}>
                     <Image

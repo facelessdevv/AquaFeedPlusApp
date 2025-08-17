@@ -3,9 +3,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import ProductsScreen from '../screens/ProductsScreen';
 import SupportScreen from '../screens/SupportScreen';
-import SettingsScreen from '../screens/SettingsScreen';
 import CartScreen from '../screens/CartScreen';
 import CustomTabBar from './CustomTabBar';
+import ProfileScreen from '../screens/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,7 +28,7 @@ const MainTabs = () => {
         }} 
       />
       <Tab.Screen name="Support" component={SupportScreen} options={{ title: 'پشتیبانی' }} />
-      <Tab.Screen name="Settings" component={SettingsScreen} options={{ title: 'تنظیمات' }} />
+      <Tab.Screen name="Profile" component={ProfileScreen} options={{ title: 'پروفایل' }} />
     </Tab.Navigator>
   );
 };
