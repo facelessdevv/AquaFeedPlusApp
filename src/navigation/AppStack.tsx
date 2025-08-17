@@ -10,12 +10,14 @@ import AgentsScreen from '../screens/AgentsScreen';
 import PrioritiesScreen from '../screens/PrioritiesScreen';
 import ContactUsScreen from '../screens/ContactUsScreen';
 import PriceListScreen from '../screens/PriceListScreen';
+import NewsDetailScreen from '../screens/NewsDetailScreen';
 
 export type RootStackParamList = {
   Main: undefined;
   AboutUs: undefined;
   RandD: undefined;
   News: undefined;
+  NewsDetail: { articleId: string };
   Agents: undefined;
   Priorities: undefined;
   ContactUs: undefined;
@@ -32,6 +34,7 @@ const AppStack = () => {
         <Stack.Screen name="AboutUs" component={AboutUsScreen} />
         <Stack.Screen name="RandD" component={RandDScreen} />
         <Stack.Screen name="News" component={NewsScreen} />
+        <Stack.Screen name="NewsDetail" component={NewsDetailScreen} />
         <Stack.Screen name="Agents" component={AgentsScreen} />
         <Stack.Screen name="Priorities" component={PrioritiesScreen} />
         <Stack.Screen name="ContactUs" component={ContactUsScreen} />

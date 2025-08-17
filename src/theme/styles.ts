@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { wp, hp, metrics } from './layout';
+import { hp, wp, metrics } from './layout';
+import { isRTL } from '../locales';
 
 export const buttonStyles = StyleSheet.create({
     container: {
@@ -229,5 +230,132 @@ export const customTabBarStyles = (colors: any) =>
         color: colors.textSecondary,
         marginTop: hp('1%'),
         textAlign: 'center',
+    },
+});
+
+export const latestNewsStyles = (colors: any) => StyleSheet.create({
+    container: {
+        marginTop: hp('3%'),
+    },
+    header: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: hp('2%'),
+        paddingHorizontal: wp('5%'),
+    },
+    headerTitle: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2.2%'),
+        color: colors.textPrimary,
+    },
+    showAllButtonText: {
+        fontFamily: 'IRANSans(FaNum)_Medium',
+        fontSize: hp('1.7%'),
+        color: colors.primary,
+    },
+    cardContainer: {
+        width: wp('65%'),
+        backgroundColor: colors.surface,
+        borderRadius: metrics.borderRadius,
+        ...metrics.cardShadow,
+        overflow: 'hidden',
+        marginRight: wp('4%'),
+    },
+    cardImage: {
+        width: '100%',
+        height: hp('15%'),
+    },
+    cardContent: {
+        padding: wp('3%'),
+    },
+    cardTitle: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('1.8%'),
+        color: colors.textPrimary,
+        marginBottom: hp('1%'),
+        textAlign: 'right',
+    },
+    cardDate: {
+        fontFamily: 'IRANSans(FaNum)_Light',
+        fontSize: hp('1.5%'),
+        color: colors.textSecondary,
+        textAlign: 'right',
+    },
+});
+
+export const newsDetailStyles = (colors: any) => StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: colors.background,
+    },
+    header: {
+        position: 'absolute',
+        top: hp('5%'),
+        left: wp('5%'),
+        zIndex: 10,
+        backgroundColor: 'rgba(0,0,0,0.4)',
+        borderRadius: wp('5%'),
+        padding: 8,
+    },
+    mainImage: {
+        width: '100%',
+        height: hp('40%'),
+    },
+    contentText: {
+        fontFamily: 'IRANSans(FaNum)_Medium',
+        fontSize: hp('1.9%'),
+        color: colors.textPrimary,
+        lineHeight: hp('3.5%'),
+        textAlign: 'justify',
+        marginBottom: hp('2%'),
+    },
+    contentHeading: { 
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2.2%'),
+        color: colors.textPrimary,
+        marginBottom: hp('1.5%'),
+        marginTop: hp('1%'),
+    },
+    contentImage: { 
+        width: wp('100%'),
+        height: hp('25%'),
+        borderRadius: metrics.borderRadius,
+        marginBottom: hp('2%'),
+    },
+    title: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2.8%'),
+        color: colors.textPrimary,
+        marginBottom: hp('1%'),
+    },
+    date: {
+        fontFamily: 'IRANSans(FaNum)_Light',
+        fontSize: hp('1.6%'),
+        color: colors.textSecondary,
+        marginBottom: hp('3%'),
+    },
+    galleryContainer: {
+        marginTop: hp('3%'),
+    },
+    galleryTitle: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2.2%'),
+        color: colors.textPrimary,
+        marginBottom: hp('2%'),
+    },
+    galleryImage: {
+        width: wp('80%'),
+        height: hp('25%'),
+        borderRadius: metrics.borderRadius,
+        marginRight: wp('4%'),
+    },
+    contentContainer: {
+        padding: wp('5%'),
+        backgroundColor: colors.surface,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        marginTop: -hp('3%'),
+        minHeight: hp('63%'),
     },
 });

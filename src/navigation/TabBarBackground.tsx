@@ -8,18 +8,18 @@ const TabBarBackground = () => {
     const { colors } = useTheme();
 
     const width = wp('90%');
-    const height = hp('8%');
+    const height = hp('12%');
     const borderRadius = metrics.borderRadius * 1.5;
 
-    const centerWidth = wp('20%');
+    const centerWidth = wp('15%');
     const cutoutRadius = centerWidth / 2;
 
     const path = `
       M 0,${borderRadius}
       A ${borderRadius},${borderRadius} 0 0 1 ${borderRadius},0
-      L ${width / 2 - cutoutRadius - 10},0
-      C ${width / 2 - cutoutRadius + 5},0 ${width / 2 - cutoutRadius + 5},${height / 3} ${width / 2},${height / 3}
-      C ${width / 2 + cutoutRadius - 5},${height / 3} ${width / 2 + cutoutRadius - 5},0 ${width / 2 + cutoutRadius + 10},0
+      L ${width / 2 - cutoutRadius - 20},0
+      C ${width / 2 - cutoutRadius + 0},0 ${width / 2 - cutoutRadius + 0},${height / 3} ${width / 2},${height / 3}
+      C ${width / 2 + cutoutRadius + 5},${height / 3} ${width / 2 + cutoutRadius - 0},0 ${width / 2 + cutoutRadius + 20},0
       L ${width - borderRadius},0
       A ${borderRadius},${borderRadius} 0 0 1 ${width},${borderRadius}
       L ${width},${height}
