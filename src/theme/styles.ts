@@ -37,13 +37,15 @@ export const homeScreenStyles = StyleSheet.create({
         paddingHorizontal: wp('5%'),
         paddingVertical: hp('1.5%'),
         borderBottomWidth: 1,
+        borderBottomLeftRadius: metrics.borderRadius,
+        borderBottomRightRadius: metrics.borderRadius,
     },
     headerSection: {
         alignSelf: 'center',
     },
     headerLogo: {
-        width: wp('12%'),
-        height: wp('12%'),
+        width: wp('15%'),
+        height: wp('15%'),
     },
     headerTitle: {
         fontSize: wp('6%'),
@@ -81,6 +83,9 @@ export const homeScreenStyles = StyleSheet.create({
         fontSize: wp('3%'),
         fontFamily: 'IRANSans(FaNum)_Medium',
     },
+    padding: {
+        paddingVertical: hp('2%')
+    }
 });
 
 export const HeroSwiperStyles = StyleSheet.create({
@@ -94,8 +99,10 @@ export const HeroSwiperStyles = StyleSheet.create({
         alignItems: 'center',
     },
     image: {
+        ...StyleSheet.absoluteFillObject,
         width: '100%',
         height: '100%',
+        borderRadius: metrics.borderRadius
     },
     dot: {
         width: wp('2%'),
@@ -192,3 +199,35 @@ export const customTabBarStyles = (colors: any) =>
         fontFamily: 'IRANSans(FaNum)_Bold',
     },
   });
+  
+  export const quickAccessStyles = (colors: any) => StyleSheet.create({
+    gridContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        marginTop: hp('2%'),
+    },
+    itemContainer: {
+        width: wp('25%'),
+        alignItems: 'center',
+        marginBottom: hp('2.5%'),
+    },
+    iconWrapper: {
+        width: wp('14%'),
+        height: wp('14%'),
+        borderRadius: metrics.borderRadius,
+        backgroundColor: colors.background,
+        justifyContent: 'center',
+        alignItems: 'center',
+        ...metrics.cardShadow,
+        shadowColor: colors.primary,
+        shadowOpacity: 0.05,
+    },
+    itemTitle: {
+        fontFamily: 'IRANSans(FaNum)_Medium',
+        fontSize: hp('1.5%'),
+        color: colors.textSecondary,
+        marginTop: hp('1%'),
+        textAlign: 'center',
+    },
+});

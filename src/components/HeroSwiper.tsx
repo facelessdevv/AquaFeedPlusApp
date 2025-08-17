@@ -5,9 +5,9 @@ import { useTheme } from '../context/ThemeContext';
 import { HeroSwiperStyles as styles } from '../theme/styles';
 
 const SLIDER_IMAGES = [
-  'https://placehold.co/600x400/003a5d/FFFFFF?text=Aquafeed+Plus+1',
-  'https://placehold.co/600x400/E04B15/FFFFFF?text=Aquafeed+Plus+2',
-  'https://placehold.co/600x400/8cc63f/FFFFFF?text=Aquafeed+Plus+3',
+  'https://aquafeedplus.org/wp-content/uploads/2025/08/site-baner.psd-farsi-png.webp',
+  'https://aquafeedplus.org/wp-content/uploads/2025/04/3-2.webp',
+  'https://aquafeedplus.org/wp-content/uploads/2025/04/2-2.webp',
 ];
 
 const HeroSwiper = () => {
@@ -25,7 +25,7 @@ const HeroSwiper = () => {
       >
         {SLIDER_IMAGES.map((url, index) => (
           <View key={index} style={styles.slide}>
-            <Image source={{ uri: url }} style={styles.image} resizeMode="cover" />
+            <Image source={{ uri: url }} style={styles.image} resizeMode="stretch" />
           </View>
         ))}
       </Swiper>

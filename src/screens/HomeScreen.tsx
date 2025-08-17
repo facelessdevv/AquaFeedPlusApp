@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, Text, ScrollView, TouchableOpacity, Alert, Image } from 'react-native';
+import { View, Text, ScrollView, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Icon from 'react-native-vector-icons/Ionicons';
 import { useTheme } from '../context/ThemeContext';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -9,6 +8,8 @@ import { RootStackParamList } from '../navigation/AppStack';
 import { homeScreenStyles as styles } from '../theme/styles';
 import Card from '../components/common/Card';
 import HeroSwiper from '../components/HeroSwiper';
+import QuickAccessGrid from '../components/QuickAccessGrid';
+
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
@@ -32,14 +33,15 @@ const HomeScreen = () => {
             </View>
 
             <ScrollView contentContainerStyle={styles.container}>
-                <HeroSwiper />
+
+                <View style={styles.padding}>
+                    <HeroSwiper />
+                </View>
 
                 <Card>
-                    <Text style={[styles.cardTitle, { color: colors.textPrimary }]}>دسترسی سریع</Text>
-                    {/* ... بخش دسترسی سریع */}
+                    <QuickAccessGrid />
                 </Card>
                 
-                {/* ... بخش آخرین اخبار */}
             </ScrollView>
         </SafeAreaView>
     );
