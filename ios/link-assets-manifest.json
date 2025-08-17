@@ -1,0 +1,73 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/IRANSans(FaNum).ttf",
+      "sha1": "b0822cf45c84aeb67519877bac099ef729c98462"
+    },
+    {
+      "path": "src/assets/fonts/IRANSans(FaNum)_Black.ttf",
+      "sha1": "5c2fc91896c324661a18e30f1fe9cea78ba5ac37"
+    },
+    {
+      "path": "src/assets/fonts/IRANSans(FaNum)_Bold.ttf",
+      "sha1": "5bb79755b46c43122afab1ca82fc18f2c868afdd"
+    },
+    {
+      "path": "src/assets/fonts/IRANSans(FaNum)_Light.ttf",
+      "sha1": "2b0f36334500c6d8c6cf39dd271cd660c64da97e"
+    },
+    {
+      "path": "src/assets/fonts/IRANSans(FaNum)_Medium.ttf",
+      "sha1": "3a322f450b5f8453c9f40d31ce3eaa96501b96c0"
+    },
+    {
+      "path": "src/assets/fonts/IRANSans(FaNum)_UltraLight.ttf",
+      "sha1": "795f96960c072e0341fd984d3124613888054c81"
+    },
+    {
+      "path": "src/assets/fonts/IRANYekanXFaNum-Black.ttf",
+      "sha1": "2e22fe9b2645039894bea4377517a5bde1574a0b"
+    },
+    {
+      "path": "src/assets/fonts/IRANYekanXFaNum-Bold.ttf",
+      "sha1": "e704b9f1191ec13172647b739e382ecd19e38746"
+    },
+    {
+      "path": "src/assets/fonts/IRANYekanXFaNum-DemiBold.ttf",
+      "sha1": "b3ccd3d7c90e5ede623e40f65e059e263337932f"
+    },
+    {
+      "path": "src/assets/fonts/IRANYekanXFaNum-ExtraBlack.ttf",
+      "sha1": "63cf20a09c3c815a5c8aedbcdc3a167f78a273c3"
+    },
+    {
+      "path": "src/assets/fonts/IRANYekanXFaNum-ExtraBold.ttf",
+      "sha1": "9760ba49c8dc4986a94984afde232e55c4322568"
+    },
+    {
+      "path": "src/assets/fonts/IRANYekanXFaNum-Heavy.ttf",
+      "sha1": "80817575b699f788ef38c2eb336cc48583e04480"
+    },
+    {
+      "path": "src/assets/fonts/IRANYekanXFaNum-Light.ttf",
+      "sha1": "299dbbe7725989b56d528ead4194eff71a7465db"
+    },
+    {
+      "path": "src/assets/fonts/IRANYekanXFaNum-Medium.ttf",
+      "sha1": "9fe8731162cb37e6a150bbab2c1418c417fcdf3c"
+    },
+    {
+      "path": "src/assets/fonts/IRANYekanXFaNum-Regular.ttf",
+      "sha1": "02bf6945a7582adc0fda7209809400353d7843f7"
+    },
+    {
+      "path": "src/assets/fonts/IRANYekanXFaNum-Thin.ttf",
+      "sha1": "f038b589e280e504eddf5e8924500892ac1096be"
+    },
+    {
+      "path": "src/assets/fonts/IRANYekanXFaNum-UltraLight.ttf",
+      "sha1": "952a1e07b6c35003f9e230090477839d54d2aa81"
+    }
+  ]
+}
