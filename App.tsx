@@ -1,15 +1,15 @@
 import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { ThemeProvider } from './src/context/ThemeContext';
 import AppStack from './src/navigation/AppStack';
+import { ThemeProvider } from './src/context/ThemeContext';
+import { CartProvider } from './src/context/CartContext';
 
 const App = () => {
   return (
-    <SafeAreaProvider>
-      <ThemeProvider>
+    <ThemeProvider>
+      <CartProvider>
         <AppStack />
-      </ThemeProvider>
-    </SafeAreaProvider>
+      </CartProvider>
+    </ThemeProvider>
   );
 };
 

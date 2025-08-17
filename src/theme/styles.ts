@@ -24,44 +24,6 @@ export const cardStyles = StyleSheet.create({
     },
 });
 
-export const customTabBarStyles = StyleSheet.create({
-    tabBarContainer: {
-        flexDirection: 'row-reverse',
-        height: hp('9%'),
-        borderTopWidth: 1,
-        alignItems: 'center',
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
-    },
-    tabButton: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    centerButtonContainer: {
-        flex: 1.2,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    centerButton: {
-        width: wp('16%'),
-        height: wp('16%'),
-        borderRadius: wp('8%'),
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'absolute',
-        bottom: hp('2.5%'),
-        ...metrics.cardShadow,
-    },
-    tabLabel: {
-        fontSize: wp('2.5%'),
-        fontFamily: 'IRANSans(FaNum)',
-        marginTop: hp('0.5%'),
-    }
-});
-
 export const homeScreenStyles = StyleSheet.create({
     flex: { flex: 1 },
     container: {
@@ -169,3 +131,62 @@ export const cartScreenStyles = StyleSheet.create({
         fontFamily: 'IRANSans(FaNum)_Medium',
     },
 });
+
+export const customTabBarStyles = (colors: any) =>
+  StyleSheet.create({
+    container: {
+      flexDirection: 'row',
+      position: 'absolute',
+      bottom: hp('2%'),
+      left: wp('5%'),
+      right: wp('5%'),
+      height: hp('8%'),
+      borderRadius: metrics.borderRadius * 1.5,
+      backgroundColor: colors.surface + 'F2',
+      alignItems: 'center',
+      justifyContent: 'space-around',
+      paddingHorizontal: wp('3%'),
+      ...metrics.cardShadow,
+      shadowOpacity: 0.15,
+      shadowRadius: 10,
+      shadowOffset: { width: 0, height: 4 },
+      elevation: 5,
+    },
+    tabButton: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: hp('0.5%'),
+    },
+    centerButtonContainer: {
+      width: wp('20%'),
+      height: wp('20%'),
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: -hp('5.5%'),
+    },
+    centerButton: {
+      width: wp('15%'),
+      height: wp('15%'),
+      borderRadius: wp('10%'),
+      backgroundColor: colors.accent,
+      justifyContent: 'center',
+      alignItems: 'center',
+      ...metrics.cardShadow,
+      shadowColor: colors.accent,
+      shadowOpacity: 0.35,
+      shadowRadius: 12,
+      shadowOffset: { width: 0, height: 6 },
+      elevation: 8,
+    },
+    tabLabel: {
+      fontSize: hp('1.4%'),
+      fontFamily: 'IRANSans(FaNum)_Medium',
+      marginTop: 3,
+      color: colors.textSecondary,
+    },
+    activeTabLabel: {
+      color: colors.primary,
+      fontFamily: 'IRANSans(FaNum)_Bold',
+    },
+  });
