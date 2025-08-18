@@ -4,9 +4,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { useTheme } from '../context/ThemeContext';
 import { customTabBarStyles as styles } from '../theme/styles';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
+import { useCart } from '../context/CartContext';
 
 const CustomTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
     const { colors } = useTheme();
+    const { itemCount } = useCart();
 
     const [keyboardVisible, setKeyboardVisible] = React.useState(false);
 
@@ -54,9 +56,16 @@ const CustomTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => 
                     const color = isFocused ? colors.primary : colors.textSecondary;
                     const fontFamily = isFocused ? 'IRANSans(FaNum)_Bold' : 'IRANSans(FaNum)_Medium';
 
-                    return (
+                     return (
                         <TouchableOpacity key={index} onPress={onPress} style={styles.tabButton}>
-                            <Icon name={iconName} size={24} color={color} />
+                            <View>
+                                <Icon name={iconName} size={24} color={color} />
+                                {route.name === 'Cart' && itemCount > 0 && (
+                                    <View style={[styles.badgeContainer, { borderColor: colors.surface, shadowColor: colors.shadow }]}>
+                                        <Text style={styles.badgeText}>{itemCount}</Text>
+                                    </View>
+                                )}
+                            </View>
                             <Text style={[styles.tabLabel, { color, fontFamily }]}>{label}</Text>
                         </TouchableOpacity>
                     );

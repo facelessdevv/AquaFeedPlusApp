@@ -11,6 +11,7 @@ export interface Colors {
   statusBar: StatusBarStyle;
   onAccent: string;
   shadow: string;
+  error: string;
 }
 
 export const lightColors: Colors = {
@@ -23,6 +24,7 @@ export const lightColors: Colors = {
   border: '#E0E6ED',
   onAccent: '#FFFFFF',
   shadow: '#000000',
+  error: '#B00020',
   statusBar: 'dark-content',
 };
 
@@ -36,5 +38,6 @@ export const darkColors: Colors = {
   border: '#2D3748',
   onAccent: '#000000',
   shadow: '#000000',
+  error: '#CF6679',
   statusBar: 'light-content',
 };

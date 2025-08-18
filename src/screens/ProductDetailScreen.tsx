@@ -10,6 +10,7 @@ import { productDetailScreenStyles } from '../theme/styles';
 import { productCategories } from '../data/productData';
 import { RootStackParamList } from '../navigation/AppStack';
 import ProductDetailFooter from '../components/ProductDetailFooter';
+import { useCart } from '../context/CartContext';
 
 type ScreenRouteProp = RouteProp<RootStackParamList, 'ProductDetail'>;
 
@@ -19,6 +20,7 @@ const ProductDetailScreen = () => {
     const navigation = useNavigation();
     const route = useRoute<ScreenRouteProp>();
     const { productId } = route.params;
+    const { addToCart } = useCart();
 
     const [quantity, setQuantity] = useState(1);
     
@@ -41,7 +43,9 @@ const ProductDetailScreen = () => {
     }
 
     const handleAddToCart = () => {
-        Alert.alert('موفق', `${quantity} عدد از محصول "${product?.name}" به سبد خرید اضافه شد.`);
+        if (product) {
+            addToCart(product, quantity);
+        }
     };
 
     const handlePdfDownload = async () => {

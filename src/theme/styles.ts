@@ -113,29 +113,113 @@ export const HeroSwiperStyles = StyleSheet.create({
     },
 });
 
-export const cartScreenStyles = StyleSheet.create({
+export const cartScreenStyles = (colors: any) => StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: colors.background,
     },
     header: {
         padding: wp('4%'),
         borderBottomWidth: 1,
+        borderBottomColor: colors.border,
+        backgroundColor: colors.surface,
+        alignItems: 'center',
     },
     headerTitle: {
-        fontSize: wp('5%'),
+        fontSize: hp('2.5%'),
         fontFamily: 'IRANSans(FaNum)_Bold',
-        textAlign: 'center',
+        color: colors.textPrimary,
     },
     emptyContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        paddingBottom: hp('10%'),
+        paddingHorizontal: wp('10%'),
     },
     emptyText: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2.2%'),
+        color: colors.textSecondary,
         marginTop: hp('2%'),
-        fontSize: wp('4.5%'),
+        textAlign: 'center',
+    },
+    listContainer: {
+        paddingVertical: hp('2%'),
+    },
+    cartItem: {
+        flexDirection: 'row-reverse',
+        backgroundColor: colors.surface,
+        marginHorizontal: wp('4%'),
+        marginVertical: wp('4%'),
+        marginBottom: hp('2%'),
+        borderRadius: metrics.borderRadius,
+        padding: wp('3%'),
+        ...metrics.cardShadow,
+    },
+    itemImage: {
+        width: wp('22%'),
+        height: wp('22%'),
+        borderRadius: metrics.borderRadius,
+    },
+    itemDetails: {
+        flex: 1,
+        marginRight: wp('4%'),
+        justifyContent: 'space-between',
+    },
+    itemName: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2%'),
+        color: colors.textPrimary,
+        textAlign: 'right',
+    },
+    itemPrice: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('1.9%'),
+        color: colors.primary,
+        textAlign: 'right',
+        marginTop: hp('1%'),
+    },
+    itemActions: {
+        flexDirection: 'row-reverse',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginTop: hp('2%'),
+    },
+    removeButton: {
+        padding: wp('1.5%'),
+    },
+    footer: {
+        backgroundColor: colors.surface,
+        padding: wp('4%'),
+        borderTopWidth: 1,
+        borderTopColor: colors.border,
+        height: hp('25%'),
+    },
+    totalRow: {
+        flexDirection: 'row-reverse',
+        justifyContent: 'space-between',
+        marginBottom: hp('2%'),
+    },
+    totalText: {
         fontFamily: 'IRANSans(FaNum)_Medium',
+        fontSize: hp('2%'),
+        color: colors.textSecondary,
+    },
+    totalPriceText: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2.2%'),
+        color: colors.textPrimary,
+    },
+    checkoutButton: {
+        backgroundColor: colors.accent,
+        padding: hp('1%'),
+        borderRadius: metrics.borderRadius,
+        alignItems: 'center',
+    },
+    checkoutButtonText: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2%'),
+        color: '#FFFFFF',
     },
 });
 
@@ -157,6 +241,23 @@ export const customTabBarStyles = StyleSheet.create({
         height: hp('8%'),
         borderRadius: metrics.borderRadius * 1.5,
         ...metrics.cardShadow,
+    },
+    badgeContainer: {
+        position: 'absolute',
+        top: -5,
+        right: -5,
+        borderRadius: 10,
+        minWidth: 20,
+        height: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 1,
+    },
+    badgeText: {
+        color: 'white',
+        fontSize: 12,
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        paddingHorizontal: 4,
     },
     centerButton: {
         position: 'absolute',
