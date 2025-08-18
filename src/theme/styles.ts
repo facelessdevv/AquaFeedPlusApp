@@ -794,6 +794,14 @@ export const productDetailScreenStyles = (colors: any) => StyleSheet.create({
         color: colors.textSecondary,
         marginTop: hp('1%'),
     },
+    ingredientcontent: {
+        fontFamily: 'IRANSans(FaNum)_Medium',
+        fontSize: hp('1.5%'),
+        color: colors.textSecondary,
+        textAlign: 'right',
+        lineHeight: hp('3.5%'),
+        marginTop: hp('3%'),
+    },
 });
 
 export const quantitySelectorStyles = StyleSheet.create({

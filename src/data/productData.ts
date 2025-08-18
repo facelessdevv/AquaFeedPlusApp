@@ -22,6 +22,7 @@ export interface Product {
   analysisTable: AnalysisTableRow[];
   usageGuideTable?: AnalysisTableRow[];
   ingredients?: Ingredient[];  
+  ingredientcontent: string;
   pdfUrl?: string;
   content: ProductContent[];
   price: number;
@@ -101,12 +102,13 @@ export const productCategories: Category[] = [
               { component: 'ویتامین C ((mg)/در هر کیلوگرم خوراک)', value: '۴۵۰' },
             ],
             ingredients: [
-              { name: 'پودر ماهی', image: 'https://placehold.co/100x100/003a5d/ffffff?text=Fish' },
-              { name: 'کنجاله سویا', image: 'https://placehold.co/100x100/E04B15/ffffff?text=Soy' },
-              { name: 'روغن ماهی', image: 'https://placehold.co/100x100/003a5d/ffffff?text=Oil' },
-              { name: 'گلوتن گندم', image: 'https://placehold.co/100x100/E04B15/ffffff?text=Gluten' },
-              { name: 'ویتامین‌ها', image: 'https://placehold.co/100x100/003a5d/ffffff?text=Vitamins' },
+              { name: 'پودر ماهی', image: 'https://atieh-tejarat-torang.rqo.ir/wp-content/uploads/sites/8367/2023/02/o3piufe0ijy0.jpeg' },
+              { name: 'کنجاله سویا', image: 'https://zarinjavdaneh.ir/wp-content/uploads/2019/05/organic-soybean-meal-500x500.jpg' },
+              { name: 'روغن ماهی', image: 'https://www.beytoote.com/images/stories/cookery/fish2-oil-properties7.jpg' },
+              { name: 'گلوتن گندم', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS6aMV3CWNjzzpKaTQWhNtLHbMvH1voIbh8ZSI1zQTkAbkDywIfMCamZu5pC7LHjSkYoo&usqp=CAU' },
+              { name: 'ویتامین‌ها', image: 'https://darmankala.com/media/magefan_blog/582.webp' },
             ],
+            ingredientcontent: 'انواع پودر ماهی، کنجاله سویا، آرد گندم، گلوتن گندم، روغن ماهی، روغن گیاهی، مخمر هیدرولیز شده، ال کارنیتین، مکمل معدنی، مکمل ویتامینه، لسیتین، کاروتنوئیدها، آنتی اکسیدان و مواد محرک سیستم ایمنی.',
             pdfUrl: 'https://aquafeedplus.org/Catv2/Trout_FA/ST-PLUS000_FA.pdf',
           },
           // ... دیگر محصولات آغازین
