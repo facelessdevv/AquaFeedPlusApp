@@ -21,7 +21,7 @@ export const allNews: NewsArticle[] = [
     summary: 'شرکت Aquafeed Plus از محصول جدید خود برای مزارع پرورش میگو رونمایی کرد.',
     date: '1403/09/09',
     mainImage: 'https://aquafeedplus.org/wp-content/uploads/2025/03/1002922a-8d1d-4aee-8a66-12dd064425c4-300x151-1.jpg',
-    galleryImages: [''],
+    galleryImages: ['https://aquafeedplus.org/wp-content/uploads/2025/03/1002922a-8d1d-4aee-8a66-12dd064425c4-300x151-1.jpg'],
     content: [
         { 
             type: 'paragraph',

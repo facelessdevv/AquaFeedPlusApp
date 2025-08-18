@@ -33,12 +33,9 @@ const CustomTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => 
 
     return (
         <View style={styles.wrapper}>
-            {/* پس‌زمینه اصلی که دکمه‌های کناری را نگه می‌دارد */}
             <View style={[styles.background, { backgroundColor: colors.surface, shadowColor: colors.shadow }]}>
                 {state.routes.map((route, index) => {
                     const { options } = descriptors[route.key];
-
-                    // اگر دکمه ساختگی سبد خرید بود، یک جای خالی با همان اندازه رندر کن
                     if (route.name === 'Cart') {
                         return <View key={index} style={styles.tabButton} />;
                     }
@@ -65,8 +62,6 @@ const CustomTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => 
                     );
                 })}
             </View>
-
-            {/* دکمه شناور سبد خرید که همیشه روی بقیه قرار دارد */}
             <TouchableOpacity
                 onPress={() => navigation.navigate('Cart')}
                 style={[styles.centerButton, { backgroundColor: colors.accent, shadowColor: colors.accent }]}

@@ -140,19 +140,17 @@ export const cartScreenStyles = StyleSheet.create({
 });
 
 export const customTabBarStyles = StyleSheet.create({
-    // این wrapper اصلی است که جایگاه و zIndex را تعیین می‌کند
     wrapper: {
         position: 'absolute',
         bottom: 0,
         left: 0,
         right: 0,
-        height: hp('12%'), // ارتفاع برای جا دادن دکمه شناور
+        height: hp('12%'),
         alignItems: 'center',
-        zIndex: 1000, // ✨ کلید حل مشکل: این لایه را روی همه چیز قرار می‌دهد
+        zIndex: 1000,
     },
-    // این پس‌زمینه اصلی تب‌بار است
     background: {
-        flexDirection: 'row-reverse', // برای چیدمان راست به چپ
+        flexDirection: 'row',
         position: 'absolute',
         bottom: hp('2%'),
         width: wp('90%'),
@@ -160,10 +158,9 @@ export const customTabBarStyles = StyleSheet.create({
         borderRadius: metrics.borderRadius * 1.5,
         ...metrics.cardShadow,
     },
-    // دکمه شناور سبد خرید
     centerButton: {
         position: 'absolute',
-        top: 0, // در بالای wrapper قرار می‌گیرد
+        top: 0,
         width: wp('15%'),
         height: wp('15%'),
         borderRadius: wp('7.5%'),
@@ -171,13 +168,11 @@ export const customTabBarStyles = StyleSheet.create({
         alignItems: 'center',
         ...metrics.cardShadow,
     },
-    // دکمه‌های معمولی
     tabButton: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },
-    // متن زیر آیکون‌ها
     tabLabel: {
         fontSize: hp('1.4%'),
         fontFamily: 'IRANSans(FaNum)_Medium',
@@ -352,8 +347,13 @@ export const newsDetailStyles = (colors: any) => StyleSheet.create({
         padding: 8,
     },
     mainImage: {
-        width: '100%',
+        width: wp('100%'),
         height: hp('40%'),
+        borderBottomLeftRadius: metrics.borderRadius,
+        borderBottomRightRadius: metrics.borderRadius,
+    },
+    padding: {
+        paddingHorizontal: wp('5%'),
     },
     contentContainer: {
         padding: wp('5%'),
@@ -365,10 +365,11 @@ export const newsDetailStyles = (colors: any) => StyleSheet.create({
     },
     title: {
         fontFamily: 'IRANSans(FaNum)_Bold',
-        fontSize: hp('2.8%'),
+        fontSize: hp('2.2%'),
         color: colors.textPrimary,
         marginBottom: hp('1%'),
         textAlign: 'right',
+        lineHeight: hp('4%'),
     },
     date: {
         fontFamily: 'IRANSans(FaNum)_Light',
@@ -377,13 +378,17 @@ export const newsDetailStyles = (colors: any) => StyleSheet.create({
         marginBottom: hp('3%'),
         textAlign: 'right',
     },
+    separator: {
+        height: 1,
+        marginVertical: hp('3%'),
+    },
     contentText: {
-        fontFamily: 'IRANSans(FaNum)_Medium',
+        fontFamily: 'IRANSans(FaNum)_Light',
         fontSize: hp('1.9%'),
         color: colors.textPrimary,
         lineHeight: hp('3.5%'),
-        textAlign: 'justify',
-        writingDirection: 'rtl'
+        textAlign: 'right',
+        
     },
     contentHeading: {
         fontFamily: 'IRANSans(FaNum)_Bold',

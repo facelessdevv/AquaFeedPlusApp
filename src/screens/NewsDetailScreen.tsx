@@ -47,36 +47,42 @@ const NewsDetailScreen = () => {
     }
 
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView 
+            style={styles.container}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
+            >
             <TouchableOpacity onPress={() => navigation.goBack()} style={styles.header}>
                 <Icon name="arrow-back" size={24} color="#FFFFFF" />
             </TouchableOpacity>
 
             <Image source={{ uri: article.mainImage }} style={styles.mainImage} />
 
-            <View style={styles.contentContainer}>
-                <Text style={styles.title}>{article.title}</Text>
-                <Text style={styles.date}>{article.date}</Text>
+            <View style={styles.padding}>
 
-                {/* این بخش فقط زمانی اجرا می‌شود که article.content یک آرایه باشد 
-                  که با بررسی بالا تضمین شده است.
-                */}
-                {article.content?.map((item, index) => renderContentItem(item, index))}
+                <View style={styles.contentContainer}>
+                    <Text style={styles.title}>{article.title}</Text>
+                    <Text style={styles.date}>{article.date}</Text>
 
-                {article.galleryImages && article.galleryImages?.length > 0 && (
-                    <View style={styles.galleryContainer}>
-                        <Text style={styles.galleryTitle}>گالری تصاویر</Text>
-                        <FlatList
-                            data={article.galleryImages}
-                            keyExtractor={(item, index) => `${item}-${index}`}
-                            horizontal
-                            showsHorizontalScrollIndicator={false}
-                            renderItem={({ item }) => (
-                                <Image source={{ uri: item }} style={styles.galleryImage} />
-                            )}
-                        />
-                    </View>
-                )}
+                <View style={[styles.separator, { backgroundColor: colors.border }]} />
+                    {article.content?.map((item, index) => renderContentItem(item, index))}
+
+                    {article.galleryImages && article.galleryImages?.length > 0 && (
+                        <View style={styles.galleryContainer}>
+                            <Text style={styles.galleryTitle}>گالری تصاویر</Text>
+                            <FlatList
+                                data={article.galleryImages}
+                                keyExtractor={(item, index) => `${item}-${index}`}
+                                horizontal
+                                showsHorizontalScrollIndicator={false}
+                                renderItem={({ item }) => (
+                                    <Image source={{ uri: item }} style={styles.galleryImage} />
+                                )}
+                            />
+                        </View>
+                    )}
+                
+                </View>
             </View>
         </ScrollView>
     );

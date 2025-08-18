@@ -15,6 +15,7 @@ const MainTabs = () => {
   return (
     <Tab.Navigator
       tabBar={props => <CustomTabBar {...props} />} 
+      initialRouteName='Home'
       screenOptions={{
         headerShown: false,
       }}
