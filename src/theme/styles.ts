@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
 import { hp, wp, metrics } from './layout';
-import { isRTL } from '../locales';
 
 export const buttonStyles = StyleSheet.create({
     container: {
@@ -140,66 +139,51 @@ export const cartScreenStyles = StyleSheet.create({
     },
 });
 
-export const customTabBarStyles = (colors: any) =>
-  StyleSheet.create({
-    container: {
-      position: 'absolute',
-      bottom: hp('2%'),
-      left: wp('5%'),
-      right: wp('5%'),
-      height: hp('8%'),
-      ...metrics.cardShadow,
-      shadowOpacity: 0.15,
-      shadowRadius: 10,
-      shadowOffset: { width: 0, height: 4 },
-      elevation: 5,
-    },
-    buttonsWrapper: {
-      ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-around',
-      paddingHorizontal: wp('3%'),
-    },
-    
-    tabButton: {
-        flex: 1,
+export const customTabBarStyles = StyleSheet.create({
+    // این wrapper اصلی است که جایگاه و zIndex را تعیین می‌کند
+    wrapper: {
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: hp('12%'), // ارتفاع برای جا دادن دکمه شناور
         alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: hp('0.5%'),
+        zIndex: 1000, // ✨ کلید حل مشکل: این لایه را روی همه چیز قرار می‌دهد
     },
-    centerButtonContainer: {
-        width: wp('20%'),
-        height: wp('20%'),
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: -hp('6.5%'),
+    // این پس‌زمینه اصلی تب‌بار است
+    background: {
+        flexDirection: 'row-reverse', // برای چیدمان راست به چپ
+        position: 'absolute',
+        bottom: hp('2%'),
+        width: wp('90%'),
+        height: hp('8%'),
+        borderRadius: metrics.borderRadius * 1.5,
+        ...metrics.cardShadow,
     },
+    // دکمه شناور سبد خرید
     centerButton: {
-        width: wp('13%'),
-        height: wp('13%'),
-        borderRadius: wp('10%'),
-        backgroundColor: colors.accent,
+        position: 'absolute',
+        top: 0, // در بالای wrapper قرار می‌گیرد
+        width: wp('15%'),
+        height: wp('15%'),
+        borderRadius: wp('7.5%'),
         justifyContent: 'center',
         alignItems: 'center',
         ...metrics.cardShadow,
-        shadowColor: colors.accent,
-        shadowOpacity: 0.35,
-        shadowRadius: 12,
-        shadowOffset: { width: 0, height: 6 },
-        elevation: 8,
     },
+    // دکمه‌های معمولی
+    tabButton: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    // متن زیر آیکون‌ها
     tabLabel: {
         fontSize: hp('1.4%'),
         fontFamily: 'IRANSans(FaNum)_Medium',
         marginTop: 3,
-        color: colors.textSecondary,
     },
-    activeTabLabel: {
-        color: colors.primary,
-        fontFamily: 'IRANSans(FaNum)_Bold',
-    },
-  });
+});
   
   export const quickAccessStyles = (colors: any) => StyleSheet.create({
     gridContainer: {
@@ -238,7 +222,7 @@ export const latestNewsStyles = (colors: any) => StyleSheet.create({
         marginTop: hp('3%'),
     },
     header: {
-        flexDirection: 'row',
+        flexDirection: 'row-reverse',
         justifyContent: 'space-between',
         alignItems: 'center',
         marginBottom: hp('2%'),
@@ -263,15 +247,22 @@ export const latestNewsStyles = (colors: any) => StyleSheet.create({
         marginRight: wp('4%'),
     },
     cardImage: {
-        width: '100%',
+        width: wp('75%'),
         height: hp('15%'),
     },
     cardContent: {
         padding: wp('3%'),
     },
+    newsTitle: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        color: colors.textPrimary,
+        textAlign: 'right',
+        width: wp('30%')
+    },
     cardTitle: {
         fontFamily: 'IRANSans(FaNum)_Bold',
-        fontSize: hp('1.8%'),
+        width: ('auto'),
+        fontSize: hp('1.5%'),
         color: colors.textPrimary,
         marginBottom: hp('1%'),
         textAlign: 'right',
@@ -284,15 +275,77 @@ export const latestNewsStyles = (colors: any) => StyleSheet.create({
     },
 });
 
+export const newsScreenStyles = (colors: any) => StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: colors.background,
+    },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: wp('4%'),
+        backgroundColor: colors.surface,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.border,
+    },
+    headerTitle: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2.5%'),
+        color: colors.textPrimary,
+        flex: 1,
+        textAlign: 'center',
+    },
+    newsItemContainer: {
+        flexDirection: 'row-reverse',
+        backgroundColor: colors.surface,
+        borderRadius: metrics.borderRadius,
+        marginHorizontal: wp('4%'),
+        marginTop: hp('2%'),
+        ...metrics.cardShadow,
+        overflow: 'hidden',
+    },
+    newsItemImage: {
+        width: wp('30%'),
+        height: '100%',
+    },
+    newsItemContent: {
+        flex: 1,
+        padding: wp('3%'),
+        justifyContent: 'space-between',
+    },
+    newsItemTitle: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('1.9%'),
+        color: colors.textPrimary,
+        textAlign: 'right',
+        marginBottom: hp('1%'),
+    },
+    newsItemSummary: {
+        fontFamily: 'IRANSans(FaNum)_Medium',
+        fontSize: hp('1.6%'),
+        color: colors.textSecondary,
+        textAlign: 'right',
+        lineHeight: hp('2.5%'),
+    },
+    newsItemDate: {
+        fontFamily: 'IRANSans(FaNum)_Light',
+        fontSize: hp('1.5%'),
+        color: colors.textSecondary,
+        textAlign: 'right',
+        marginTop: hp('1.5%'),
+    },
+});
+
 export const newsDetailStyles = (colors: any) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.background,
     },
     header: {
+        flexDirection: 'row',
         position: 'absolute',
         top: hp('5%'),
-        left: wp('5%'),
+        left: wp('5%'), 
         zIndex: 10,
         backgroundColor: 'rgba(0,0,0,0.4)',
         borderRadius: wp('5%'),
@@ -302,38 +355,49 @@ export const newsDetailStyles = (colors: any) => StyleSheet.create({
         width: '100%',
         height: hp('40%'),
     },
-    contentText: {
-        fontFamily: 'IRANSans(FaNum)_Medium',
-        fontSize: hp('1.9%'),
-        color: colors.textPrimary,
-        lineHeight: hp('3.5%'),
-        textAlign: 'justify',
-        marginBottom: hp('2%'),
-    },
-    contentHeading: { 
-        fontFamily: 'IRANSans(FaNum)_Bold',
-        fontSize: hp('2.2%'),
-        color: colors.textPrimary,
-        marginBottom: hp('1.5%'),
-        marginTop: hp('1%'),
-    },
-    contentImage: { 
-        width: wp('100%'),
-        height: hp('25%'),
-        borderRadius: metrics.borderRadius,
-        marginBottom: hp('2%'),
+    contentContainer: {
+        padding: wp('5%'),
+        backgroundColor: colors.surface,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        marginTop: -hp('3%'),
+        minHeight: hp('63%'),
     },
     title: {
         fontFamily: 'IRANSans(FaNum)_Bold',
         fontSize: hp('2.8%'),
         color: colors.textPrimary,
         marginBottom: hp('1%'),
+        textAlign: 'right',
     },
     date: {
         fontFamily: 'IRANSans(FaNum)_Light',
         fontSize: hp('1.6%'),
         color: colors.textSecondary,
         marginBottom: hp('3%'),
+        textAlign: 'right',
+    },
+    contentText: {
+        fontFamily: 'IRANSans(FaNum)_Medium',
+        fontSize: hp('1.9%'),
+        color: colors.textPrimary,
+        lineHeight: hp('3.5%'),
+        textAlign: 'justify',
+        writingDirection: 'rtl'
+    },
+    contentHeading: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2.2%'),
+        color: colors.textPrimary,
+        marginBottom: hp('1.5%'),
+        marginTop: hp('1%'),
+        textAlign: 'right',
+    },
+    contentImage: {
+        width: '100%',
+        height: hp('25%'),
+        borderRadius: metrics.borderRadius,
+        marginBottom: hp('2%'),
     },
     galleryContainer: {
         marginTop: hp('3%'),
@@ -343,6 +407,7 @@ export const newsDetailStyles = (colors: any) => StyleSheet.create({
         fontSize: hp('2.2%'),
         color: colors.textPrimary,
         marginBottom: hp('2%'),
+        textAlign: 'right',
     },
     galleryImage: {
         width: wp('80%'),
@@ -350,12 +415,33 @@ export const newsDetailStyles = (colors: any) => StyleSheet.create({
         borderRadius: metrics.borderRadius,
         marginRight: wp('4%'),
     },
-    contentContainer: {
+});
+
+export const profileScreenStyles = (colors: any) => StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: colors.background,
         padding: wp('5%'),
+    },
+    header: {
+        fontSize: hp('3%'),
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        color: colors.textPrimary,
+        textAlign: 'right',
+        marginBottom: hp('4%'),
+    },
+    settingRow: {
+        flexDirection: 'row-reverse',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingVertical: hp('2%'),
         backgroundColor: colors.surface,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        marginTop: -hp('3%'),
-        minHeight: hp('63%'),
+        borderRadius: metrics.borderRadius,
+        paddingHorizontal: wp('4%'),
+    },
+    settingText: {
+        fontSize: hp('2%'),
+        fontFamily: 'IRANSans(FaNum)_Medium',
+        color: colors.textPrimary,
     },
 });

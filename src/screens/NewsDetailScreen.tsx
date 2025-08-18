@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, ScrollView, Image, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
+import { View, Text, ScrollView, Image, TouchableOpacity, FlatList } from 'react-native';
 import { RouteProp, useRoute, useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { useTheme } from '../context/ThemeContext';
 import { newsDetailStyles } from '../theme/styles';
 import { RootStackParamList } from '../navigation/AppStack';
-import { allNews, NewsContent } from '../data/newsData'; // NewsContent را ایمپورت کنید
+import { allNews, NewsContent } from '../data/newsData';
 
 type NewsDetailScreenRouteProp = RouteProp<RootStackParamList, 'NewsDetail'>;
 
@@ -32,7 +32,7 @@ const NewsDetailScreen = () => {
         }
     };
 
-    // ✨ بررسی کلیدی: اگر خبر پیدا نشد، یک پیام واضح نمایش بده
+    
     if (!article) {
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: colors.background }}>
@@ -63,7 +63,7 @@ const NewsDetailScreen = () => {
                 */}
                 {article.content?.map((item, index) => renderContentItem(item, index))}
 
-                {article.galleryImages && article.galleryImages.length > 0 && (
+                {article.galleryImages && article.galleryImages?.length > 0 && (
                     <View style={styles.galleryContainer}>
                         <Text style={styles.galleryTitle}>گالری تصاویر</Text>
                         <FlatList

@@ -9,6 +9,8 @@ export interface Colors {
   textSecondary: string;
   border: string;
   statusBar: StatusBarStyle;
+  onAccent: string;
+  shadow: string;
 }
 
 export const lightColors: Colors = {
@@ -19,6 +21,8 @@ export const lightColors: Colors = {
   textPrimary: '#0A1E2B',
   textSecondary: '#5B6670',
   border: '#E0E6ED',
+  onAccent: '#FFFFFF',
+  shadow: '#000000',
   statusBar: 'dark-content',
 };
 
@@ -30,5 +34,7 @@ export const darkColors: Colors = {
   textPrimary: '#F0F4F8',
   textSecondary: '#A0AEC0',
   border: '#2D3748',
+  onAccent: '#000000',
+  shadow: '#000000',
   statusBar: 'light-content',
 };
