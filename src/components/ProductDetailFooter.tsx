@@ -18,7 +18,7 @@ const ProductDetailFooter = ({ quantity, onIncrease, onDecrease, onAddToCart, on
     const styles = productDetailFooterStyles(colors);
 
     return (
-        <View style={[styles.safeArea, { backgroundColor: colors.surface, borderTopColor: colors.border }]}>
+        <SafeAreaView edges={['bottom']} style={[styles.safeArea, { backgroundColor: colors.surface, borderTopColor: colors.border }]}>
             <View style={styles.quantitySection}>
                 <QuantitySelector
                     quantity={quantity}
@@ -41,7 +41,7 @@ const ProductDetailFooter = ({ quantity, onIncrease, onDecrease, onAddToCart, on
                     </TouchableOpacity>
                 </View>
             </View>
-        </View>
+        </SafeAreaView>
     );
 };
 

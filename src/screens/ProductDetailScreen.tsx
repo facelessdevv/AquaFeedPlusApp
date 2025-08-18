@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, Image, TouchableOpacity, Alert, Linking } from 'react-native';
+import { View, Text, ScrollView, Image, TouchableOpacity, Alert, Linking, FlatList } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -65,16 +65,23 @@ const ProductDetailScreen = () => {
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <Icon name="arrow-back-outline" size={28} color={colors.textPrimary} />
+                    <Icon name="arrow-forward-outline" size={28} color={colors.textPrimary} />
                 </TouchableOpacity>
                 <Text style={styles.headerTitle}>{categoryName}</Text>
             </View>
 
-            <ScrollView contentContainerStyle={{ paddingBottom: hp('2%') }}>
+            <ScrollView 
+                contentContainerStyle={{ paddingBottom: hp('20%') }}
+                showsHorizontalScrollIndicator={false}
+                showsVerticalScrollIndicator={false}
+                >
                 <View style={styles.content}>
                     <Image source={{ uri: product.image }} style={styles.productImage} resizeMode='cover'/>
                     <Text style={styles.productName}>{product.name}</Text>
+                    <View style={[styles.separator, { backgroundColor: colors.border }]} />
                     <Text style={styles.productDescription}>{product.description}</Text>
+
+                    <View style={[styles.separator, { backgroundColor: colors.border }]} />
 
                     {product.content && product.content.length > 0 && (
                         <View>
@@ -88,6 +95,29 @@ const ProductDetailScreen = () => {
                         </View>
                     )}
 
+                    {product.ingredients && product.ingredients.length > 0 && (
+                        <View style={styles.ingredientsContainer}>
+                            <View style={[styles.separator, { backgroundColor: colors.border }]} />
+                            <Text style={styles.tableHeader}>ترکیبات</Text>
+                            <FlatList
+                                data={product.ingredients}
+                                horizontal
+                                inverted
+                                showsHorizontalScrollIndicator={false}
+                                keyExtractor={(item) => item.name}
+                                style={styles.ingredientList}
+                                renderItem={({ item }) => (
+                                    <View style={styles.ingredientItem}>
+                                        <Image source={{ uri: item.image }} style={styles.ingredientImage} />
+                                        <Text style={styles.ingredientName}>{item.name}</Text>
+                                    </View>
+                                )}
+                            />
+                        </View>
+                    )}
+
+                    <View style={[styles.separator, { backgroundColor: colors.border }]} />
+
                     <Text style={styles.tableHeader}>آنالیز محصول</Text>
                     {product.analysisTable.map((row, index) => (
                         <View key={index} style={styles.tableRow}>
@@ -95,6 +125,18 @@ const ProductDetailScreen = () => {
                             <Text style={styles.tableCell}>{row.value}</Text>
                         </View>
                     ))}
+                    
+                    {product.usageGuideTable && product.usageGuideTable.length > 0 && (
+                        <View>
+                            <View style={[styles.separator, { backgroundColor: colors.border }]} />
+                            {product.usageGuideTable.map((row, index) => (
+                                <View key={index} style={styles.tableRow}>
+                                    <Text style={styles.tableCell}>{row.component}</Text>
+                                    <Text style={styles.tableCell}>{row.value}</Text>
+                                </View>
+                            ))}
+                        </View>
+                    )}
                 </View>
             </ScrollView>
 

@@ -3,6 +3,11 @@ export interface AnalysisTableRow {
   value: string;
 }
 
+export interface Ingredient {
+  name: string;
+  image: string;
+}
+
 export interface ProductContent {
     type: 'header' | 'paragraph' | 'image';
     value: string;
@@ -15,6 +20,8 @@ export interface Product {
   image: string;
   description: string;
   analysisTable: AnalysisTableRow[];
+  usageGuideTable?: AnalysisTableRow[];
+  ingredients?: Ingredient[];  
   pdfUrl?: string;
   content: ProductContent[];
 }
@@ -83,6 +90,20 @@ export const productCategories: Category[] = [
               { component: 'خاکستر', value: '۱۰-۱۳' },
               { component: 'رطوبت', value: '۶-۱۰' },
               { component: 'فسفر', value: '۱-۱/۵' },
+            ],
+            usageGuideTable: [
+              { component: 'نوع خوراک', value: 'BT-PLUS' },
+              { component: 'ویتامین A ((IU)/در هر کیلوگرم خوراک)', value: '۹۶۰۰' },
+              { component: 'ویتامین D3 ((IU)/در هر کیلوگرم خوراک)', value: '۲۴۰۰' },
+              { component: 'ویتامین E ((mg)/در هر کیلوگرم خوراک)', value: '۲۴۰' },
+              { component: 'ویتامین C ((mg)/در هر کیلوگرم خوراک)', value: '۴۵۰' },
+            ],
+            ingredients: [
+              { name: 'پودر ماهی', image: 'https://placehold.co/100x100/003a5d/ffffff?text=Fish' },
+              { name: 'کنجاله سویا', image: 'https://placehold.co/100x100/E04B15/ffffff?text=Soy' },
+              { name: 'روغن ماهی', image: 'https://placehold.co/100x100/003a5d/ffffff?text=Oil' },
+              { name: 'گلوتن گندم', image: 'https://placehold.co/100x100/E04B15/ffffff?text=Gluten' },
+              { name: 'ویتامین‌ها', image: 'https://placehold.co/100x100/003a5d/ffffff?text=Vitamins' },
             ],
             pdfUrl: 'https://aquafeedplus.org/Catv2/Trout_FA/ST-PLUS000_FA.pdf',
           },

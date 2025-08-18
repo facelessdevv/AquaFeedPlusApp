@@ -562,8 +562,8 @@ export const subCategoryScreenStyles = (colors: any) => StyleSheet.create({
         resizeMode: 'contain',
     },
     separator: {
-        width: 1,
-        marginVertical: hp('3%'),
+        width: wp('1%'),
+        height: hp('5%'),
     },
     productInfo: {
         flex: 1,
@@ -616,7 +616,6 @@ export const productDetailScreenStyles = (colors: any) => StyleSheet.create({
         fontSize: hp('2.5%'),
         color: colors.textPrimary,
         textAlign: 'right',
-        marginBottom: hp('3%'),
     },
     productDescription: {
         fontFamily: 'IRANSans(FaNum)_Medium',
@@ -625,13 +624,16 @@ export const productDetailScreenStyles = (colors: any) => StyleSheet.create({
         textAlign: 'right',
         lineHeight: hp('3.5%'),
     },
+    separator: {
+        height: 1,
+        marginVertical: hp('3%'),
+    },
     tableHeader: {
         fontFamily: 'IRANSans(FaNum)_Bold',
         fontSize: hp('2%'),
         color: colors.textPrimary,
         textAlign: 'right',
         marginBottom: hp('2%'),
-        marginTop: hp('2%'),
     },
     tableRow: {
         flexDirection: 'row-reverse',
@@ -650,7 +652,6 @@ export const productDetailScreenStyles = (colors: any) => StyleSheet.create({
         fontSize: hp('2%'),
         color: colors.textPrimary,
         textAlign: 'right',
-        marginTop: hp('4%'),
         marginBottom: hp('2%'),
     },
     featureRow: {
@@ -667,6 +668,30 @@ export const productDetailScreenStyles = (colors: any) => StyleSheet.create({
         color: colors.textPrimary,
         flex: 1,
         textAlign: 'right',
+    },
+    ingredientsContainer: {
+        marginTop: hp('4%'),
+    },
+    ingredientList: {
+        marginTop: hp('2%'),
+    },
+    ingredientItem: {
+        alignItems: 'center',
+        marginRight: wp('4%'),
+    },
+    ingredientImage: {
+        width: wp('20%'),
+        height: wp('20%'),
+        borderRadius: wp('10%'),
+        backgroundColor: colors.surface,
+        borderWidth: 2,
+        borderColor: colors.border,
+    },
+    ingredientName: {
+        fontFamily: 'IRANSans(FaNum)_Medium',
+        fontSize: hp('1.6%'),
+        color: colors.textSecondary,
+        marginTop: hp('1%'),
     },
 });
 
@@ -691,12 +716,15 @@ export const quantitySelectorStyles = StyleSheet.create({
 
 export const productDetailFooterStyles = (colors: any) => StyleSheet.create({
     safeArea: {
-        borderTopWidth: 1,
-        paddingBottom: hp('1%'),
-        height: hp('17%'),
-        top: hp('4%'),
-        borderRadius: metrics.borderRadius
-    },
+    borderTopWidth: 1,
+    paddingBottom: hp('1%'),
+    height: hp('17%'),
+    borderRadius: metrics.borderRadius,
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+},
     quantitySection: {
         flexDirection: 'row-reverse',
         justifyContent: 'space-between',
