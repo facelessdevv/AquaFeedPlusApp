@@ -6,7 +6,7 @@ export interface QuickAccessItem {
 }
 
 export const quickAccessItems: QuickAccessItem[] = [
-  { id: 1, title: 'ثبت سفارش', icon: 'cube-outline', screen: 'Priorities' },
+  { id: 1, title: 'ثبت سفارش', icon: 'cube-outline', screen: 'Products' },
   { id: 2, title: 'لیست قیمت', icon: 'pricetag-outline', screen: 'Priorities' },
   { id: 3, title: 'تحقیق و توسعه', icon: 'flask-outline', screen: 'RandD' },
   { id: 4, title: 'تماس با ما', icon: 'call-outline', screen: 'ContactUs' },

@@ -193,7 +193,7 @@ export const cartScreenStyles = (colors: any) => StyleSheet.create({
         padding: wp('4%'),
         borderTopWidth: 1,
         borderTopColor: colors.border,
-        height: hp('25%'),
+        height: hp('26%'),
     },
     totalRow: {
         flexDirection: 'row-reverse',
