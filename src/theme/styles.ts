@@ -558,17 +558,19 @@ export const productsScreenStyles = (colors: any) => StyleSheet.create({
         backgroundColor: colors.background,
     },
     header: {
+        flexDirection: 'row',
+        alignItems: 'center',
         padding: wp('4%'),
         backgroundColor: colors.surface,
         borderBottomWidth: 1,
         borderBottomColor: colors.border,
-        alignItems: 'flex-end',
     },
     headerTitle: {
         fontFamily: 'IRANSans(FaNum)_Bold',
         fontSize: hp('2.5%'),
         color: colors.textPrimary,
-        alignSelf: 'center'
+        flex: 1,
+        textAlign: 'center',
     },
     listContent: {
         padding: wp('4%'),
@@ -887,4 +889,81 @@ export const productDetailFooterStyles = (colors: any) => StyleSheet.create({
         fontSize: hp('1.5%'),
         color: '#FFFFFF',
     },
+});
+
+export const priceListScreenStyles = (colors: any) => StyleSheet.create({
+    container: { flex: 1, backgroundColor: colors.background },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: wp('4%'),
+        backgroundColor: colors.surface,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.border,
+    },
+    headerTitle: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2.5%'),
+        color: colors.textPrimary,
+        flex: 1,
+        textAlign: 'center',
+    },
+    listContent: {
+    paddingVertical: hp('1%'),
+},
+
+tableContainer: {
+    backgroundColor: colors.surface,
+    borderRadius: metrics.borderRadius,
+    ...metrics.cardShadow,
+    overflow: 'hidden',
+    marginHorizontal: wp('4%'),
+    marginTop: hp('2%'),
+},
+
+tableHeaderRow: {
+    flexDirection: 'row-reverse',
+    backgroundColor: colors.primary,
+    paddingVertical: hp('1.2%'),
+    paddingHorizontal: wp('3%'),
+    alignItems: 'center',
+},
+
+tableHeaderCell: {
+    fontFamily: 'IRANSans(FaNum)_Bold',
+    fontSize: hp('2%'),
+    color: '#FFFFFF',
+    textAlign: 'right',
+},
+
+tableRow: {
+    flexDirection: 'row-reverse',
+    paddingVertical: hp('1%'),
+    paddingHorizontal: wp('3%'),
+    borderBottomWidth: 1,
+    borderBottomColor: colors.border,
+    alignItems: 'center',
+},
+
+tableCell: {
+    fontFamily: 'IRANSans(FaNum)_Medium',
+    fontSize: hp('1.5%'),
+    color: colors.textPrimary,
+    textAlign: 'right',
+    alignSelf: 'center'
+},
+
+viewProductButton: {
+    backgroundColor: colors.accent,
+    paddingVertical: hp('1%'),
+    paddingHorizontal: wp('2.5%'),
+    borderRadius: metrics.borderRadius,
+    alignItems: 'center',
+},
+
+viewProductButtonText: {
+    fontFamily: 'IRANSans(FaNum)_Bold',
+    fontSize: hp('1.6%'),
+    color: '#FFFFFF',
+},
 });
