@@ -38,8 +38,9 @@ const ProductsScreen = () => {
                 data={productCategories}
                 renderItem={renderCategoryItem}
                 keyExtractor={(item) => item.id}
-                numColumns={2}
                 contentContainerStyle={styles.listContent}
+                showsHorizontalScrollIndicator={false}
+                showsVerticalScrollIndicator={false}
             />
         </SafeAreaView>
     );

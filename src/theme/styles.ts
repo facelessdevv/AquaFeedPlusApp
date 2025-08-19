@@ -568,9 +568,11 @@ export const productsScreenStyles = (colors: any) => StyleSheet.create({
         fontFamily: 'IRANSans(FaNum)_Bold',
         fontSize: hp('2.5%'),
         color: colors.textPrimary,
+        alignSelf: 'center'
     },
     listContent: {
         padding: wp('4%'),
+        paddingBottom: hp('15%')
     },
     categoryCard: {
         height: hp('25%'),
@@ -705,6 +707,17 @@ export const productDetailScreenStyles = (colors: any) => StyleSheet.create({
         padding: wp('5%'),
     },
     productImage: {
+        width: '100%',
+        height: hp('30%'),
+        resizeMode: 'contain',
+        marginBottom: hp('3%'),
+        borderRadius: metrics.borderRadius,
+        backgroundColor: colors.surface,
+    },
+    productDetailView: {
+        paddingTop: wp('5%')
+    },
+    productDetailImage: {
         width: '100%',
         height: hp('30%'),
         resizeMode: 'contain',

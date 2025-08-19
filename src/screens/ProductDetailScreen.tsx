@@ -87,6 +87,14 @@ const ProductDetailScreen = () => {
 
                     <View style={[styles.separator, { backgroundColor: colors.border }]} />
 
+                    <View style={styles.productDetailView}>
+                        <Image 
+                            source={{ uri: product.productimages }} style={styles.productDetailImage} resizeMode='cover'
+                        />
+                    </View>
+
+                    <View style={[styles.separator, { backgroundColor: colors.border }]} />
+
                     {product.content && product.content.length > 0 && (
                         <View>
                             <Text style={styles.featuresHeader}>ویژگی‌های کلیدی</Text>
@@ -142,6 +150,7 @@ const ProductDetailScreen = () => {
                             ))}
                         </View>
                     )}
+
                 </View>
             </ScrollView>
 

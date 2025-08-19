@@ -71,6 +71,8 @@ const ProductSubCategoryScreen = () => {
                 renderItem={renderSubCategory}
                 keyExtractor={(item) => item.id}
                 contentContainerStyle={styles.listContent}
+                showsHorizontalScrollIndicator={false}
+                showsVerticalScrollIndicator={false}
             />
         </SafeAreaView>
     );

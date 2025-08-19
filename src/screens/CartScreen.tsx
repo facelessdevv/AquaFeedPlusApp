@@ -53,6 +53,8 @@ const CartScreen = () => {
                         renderItem={renderItem}
                         keyExtractor={(item) => item.id}
                         contentContainerStyle={{ paddingBottom: hp('2%') }}
+                        showsHorizontalScrollIndicator={false}
+                        showsVerticalScrollIndicator={false}
                     />
                     <View style={styles.footer}>
                         <View style={styles.totalRow}>
