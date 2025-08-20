@@ -15,6 +15,10 @@ import ProductDetailScreen from '../screens/ProductDetailScreen';
 import ProductSubCategoryScreen from '../screens/ProductSubCategoryScreen';
 import PriceListCategoriesScreen from '../screens/PriceListCategoriesScreen';
 import PriceListScreen from '../screens/PriceListScreen';
+import SupportScreen from '../screens/SupportScreen';
+import SalesAgentsScreen from '../screens/SalesAgentsScreen';
+import DepartmentsScreen from '../screens/DepartmentsScreen';
+import FeedbackScreen from '../screens/FeedbackScreen';
 
 
 export type RootStackParamList = {
@@ -31,6 +35,10 @@ export type RootStackParamList = {
   ProductDetail: { productId: string };
   PriceListCategories: undefined;
   PriceList: { categoryId: string; categoryName: string };
+  Support: undefined;
+  SalesAgents: undefined;
+  Departments: undefined;
+  Feedback: undefined;  
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -52,6 +60,10 @@ const AppStack = () => {
         <Stack.Screen name="ProductSubCategory" component={ProductSubCategoryScreen} />
         <Stack.Screen name="PriceListCategories" component={PriceListCategoriesScreen} />
         <Stack.Screen name="PriceList" component={PriceListScreen} />
+        <Stack.Screen name="Support" component={SupportScreen} />
+        <Stack.Screen name="SalesAgents" component={SalesAgentsScreen} />
+        <Stack.Screen name="Departments" component={DepartmentsScreen} />
+        <Stack.Screen name="Feedback" component={FeedbackScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

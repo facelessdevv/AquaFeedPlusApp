@@ -996,3 +996,263 @@ export const priceListScreenStyles = (colors: any) => StyleSheet.create({
         marginRight: wp('2%'),
     },
 });
+
+export const supportScreenStyles = (colors: any) => StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: colors.background,
+    },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: wp('4%'),
+        backgroundColor: colors.surface,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.border,
+    },
+    headerTitle: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2.5%'),
+        color: colors.textPrimary,
+        flex: 1,
+        textAlign: 'center',
+    },
+    card: {
+        backgroundColor: colors.surface,
+        borderRadius: metrics.borderRadius,
+        margin: wp('4%'),
+        padding: wp('4%'),
+        ...metrics.cardShadow,
+    },
+    cardTitle: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2.2%'),
+        color: colors.textPrimary,
+        textAlign: 'right',
+        marginBottom: hp('2%'),
+    },
+    infoRow: {
+        flexDirection: 'row-reverse',
+        alignItems: 'center',
+        marginBottom: hp('1.5%'),
+    },
+    infoText: {
+        fontFamily: 'IRANSans(FaNum)_Medium',
+        fontSize: hp('1.8%'),
+        color: colors.textSecondary,
+        marginRight: wp('3%'),
+        flex: 1,
+        textAlign: 'right',
+    },
+    mapButton: {
+        backgroundColor: colors.primary,
+        padding: hp('1.5%'),
+        borderRadius: metrics.borderRadius,
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row-reverse',
+        marginTop: hp('1%'),
+    },
+    mapButtonText: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('1.8%'),
+        color: '#FFFFFF',
+        marginLeft: wp('2%'),
+    },
+    navButton: {
+        backgroundColor: colors.surface,
+        marginHorizontal: wp('4%'),
+        marginBottom: hp('2%'),
+        padding: wp('4%'),
+        borderRadius: metrics.borderRadius,
+        flexDirection: 'row-reverse',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        ...metrics.cardShadow,
+    },
+    navButtonText: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2%'),
+        color: colors.textPrimary,
+    },
+});
+
+export const collapsibleCardStyles = (colors: any) => StyleSheet.create({
+    container: {
+        backgroundColor: colors.surface,
+        borderRadius: metrics.borderRadius,
+        marginVertical: hp('1%'),
+        overflow: 'hidden',
+        ...metrics.cardShadow,
+    },
+    header: {
+        flexDirection: 'row-reverse',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: wp('4%'),
+    },
+    headerText: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2%'),
+        color: colors.textPrimary,
+    },
+    content: {
+        paddingHorizontal: wp('4%'),
+        paddingBottom: hp('2%'),
+    },
+});
+
+export const salesAgentsScreenStyles = (colors: any) => StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: colors.background,
+    },
+    header: {
+        flexDirection: 'row-reverse',
+        alignItems: 'center',
+        padding: wp('4%'),
+        backgroundColor: colors.surface,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.border,
+    },
+    headerTitle: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2.5%'),
+        color: colors.textPrimary,
+        flex: 1,
+        textAlign: 'center',
+        marginRight: -wp('8%'),
+    },
+    listContainer: {
+        padding: wp('4%'),
+    },
+    agentContainer: {
+        paddingVertical: hp('1.5%'),
+        borderBottomWidth: 1,
+    },
+    agentName: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('1.9%'),
+        color: colors.textPrimary,
+        textAlign: 'right',
+        marginBottom: hp('1%'),
+    },
+    agentDetailRow: {
+        flexDirection: 'row-reverse',
+        alignItems: 'center',
+        marginTop: hp('0.5%'),
+    },
+    agentDetailText: {
+        fontFamily: 'IRANSans(FaNum)_Medium',
+        fontSize: hp('1.7%'),
+        color: colors.textSecondary,
+        marginLeft: wp('2%'),
+    },
+});
+
+export const departmentsScreenStyles = (colors: any) => StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: colors.background,
+    },
+    header: {
+        flexDirection: 'row-reverse',
+        alignItems: 'center',
+        padding: wp('4%'),
+        backgroundColor: colors.surface,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.border,
+    },
+    headerTitle: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2.5%'),
+        color: colors.textPrimary,
+        flex: 1,
+        textAlign: 'center',
+        marginRight: -wp('8%'),
+    },
+    listContent: {
+        padding: wp('4%'),
+    },
+    departmentCard: {
+        backgroundColor: colors.surface,
+        borderRadius: metrics.borderRadius,
+        padding: wp('4%'),
+        marginBottom: hp('2%'),
+        flexDirection: 'row-reverse',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        ...metrics.cardShadow,
+    },
+    departmentName: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2%'),
+        color: colors.textPrimary,
+    },
+    emailButton: {
+        backgroundColor: colors.primary,
+        padding: wp('2.5%'),
+        borderRadius: wp('10%'),
+    },
+});
+
+export const feedbackScreenStyles = (colors: any) => StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: colors.background,
+    },
+    header: {
+        flexDirection: 'row-reverse',
+        alignItems: 'center',
+        padding: wp('4%'),
+        backgroundColor: colors.surface,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.border,
+    },
+    headerTitle: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2.5%'),
+        color: colors.textPrimary,
+        flex: 1,
+        textAlign: 'center',
+        marginRight: -wp('8%'),
+    },
+    scrollContainer: {
+        padding: wp('5%'),
+    },
+    label: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('1.9%'),
+        color: colors.textPrimary,
+        textAlign: 'right',
+        marginBottom: hp('1%'),
+    },
+    input: {
+        backgroundColor: colors.surface,
+        borderRadius: metrics.borderRadius,
+        padding: wp('3%'),
+        borderWidth: 1,
+        borderColor: colors.border,
+        fontFamily: 'IRANSans(FaNum)_Medium',
+        fontSize: hp('1.8%'),
+        textAlign: 'right',
+        writingDirection: 'rtl',
+        marginBottom: hp('3%'),
+        color: colors.textPrimary,
+    },
+    textArea: {
+        height: hp('20%'),
+        textAlignVertical: 'top',
+    },
+    button: {
+        backgroundColor: colors.primary,
+        padding: hp('2%'),
+        borderRadius: metrics.borderRadius,
+        alignItems: 'center',
+    },
+    buttonText: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2%'),
+        color: '#FFFFFF',
+    },
+});
