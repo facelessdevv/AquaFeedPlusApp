@@ -9,6 +9,7 @@ import { homeScreenStyles as styles } from '../theme/styles';
 import Card from '../components/common/Card';
 import HeroSwiper from '../components/HeroSwiper';
 import QuickAccessGrid from '../components/QuickAccessGrid';
+import LatestNewsList from '../components/LatestNewsList';
 
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
@@ -41,6 +42,8 @@ const HomeScreen = () => {
                 <Card>
                     <QuickAccessGrid />
                 </Card>
+
+                <LatestNewsList />
                 
             </ScrollView>
         </SafeAreaView>

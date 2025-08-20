@@ -2,16 +2,17 @@ import React from 'react';
 import { View, Text, TouchableOpacity, Keyboard } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useTheme } from '../context/ThemeContext';
-import { customTabBarStyles } from '../theme/styles';
+import { customTabBarStyles as styles } from '../theme/styles';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
-import TabBarBackground from './TabBarBackground';
+import { useCart } from '../context/CartContext';
 
 const CustomTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
     const { colors } = useTheme();
-    const styles = customTabBarStyles(colors);
+    const { itemCount } = useCart();
 
     const [keyboardVisible, setKeyboardVisible] = React.useState(false);
-    React.useEffect(() => {
+
+        React.useEffect(() => {
         const keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () => setKeyboardVisible(true));
         const keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () => setKeyboardVisible(false));
         return () => {
@@ -24,7 +25,6 @@ const CustomTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => 
         return null;
     }
 
-
     const icons: { [key: string]: string[] } = {
         Home: ['home', 'home-outline'],
         Products: ['cube', 'cube-outline'],
@@ -34,57 +34,49 @@ const CustomTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => 
     };
 
     return (
-        <View style={styles.container}>
-            <TabBarBackground />
-            
-            <View style={styles.buttonsWrapper}>
+        <View style={styles.wrapper}>
+            <View style={[styles.background, { backgroundColor: colors.surface, shadowColor: colors.shadow }]}>
                 {state.routes.map((route, index) => {
-
                     const { options } = descriptors[route.key];
-                    const label = options.title !== undefined ? options.title : route.name;
+                    if (route.name === 'Cart') {
+                        return <View key={index} style={styles.tabButton} />;
+                    }
+
+                    const label = options.title || route.name;
                     const isFocused = state.index === index;
 
                     const onPress = () => {
-                        const event = navigation.emit({
-                            type: 'tabPress',
-                            target: route.key,
-                            canPreventDefault: true,
-                        });
+                        const event = navigation.emit({ type: 'tabPress', target: route.key, canPreventDefault: true });
                         if (!isFocused && !event.defaultPrevented) {
                             navigation.navigate(route.name);
                         }
                     };
 
                     const iconName = icons[route.name]?.[isFocused ? 0 : 1] || 'ellipse-outline';
-                    
-                    if (route.name === 'Cart') {
-                        return (
-                            <View key={index} style={styles.centerButtonContainer}>
-                                <TouchableOpacity onPress={onPress} style={styles.centerButton}>
-                                    <Icon name={iconName} size={32} color="#FFFFFF" />
-                                </TouchableOpacity>
-                            </View>
-                        );
-                    }
+                    const color = isFocused ? colors.primary : colors.textSecondary;
+                    const fontFamily = isFocused ? 'IRANSans(FaNum)_Bold' : 'IRANSans(FaNum)_Medium';
 
-                    return (
-                        <TouchableOpacity
-                            key={index}
-                            onPress={onPress}
-                            style={styles.tabButton}
-                        >
-                            <Icon 
-                                name={iconName} 
-                                size={24} 
-                                color={isFocused ? colors.primary : colors.textSecondary} 
-                            />
-                            <Text style={[styles.tabLabel, isFocused && styles.activeTabLabel]}>
-                                {label}
-                            </Text>
+                     return (
+                        <TouchableOpacity key={index} onPress={onPress} style={styles.tabButton}>
+                            <View>
+                                <Icon name={iconName} size={24} color={color} />
+                                {route.name === 'Cart' && itemCount > 0 && (
+                                    <View style={[styles.badgeContainer, { borderColor: colors.surface, shadowColor: colors.shadow }]}>
+                                        <Text style={styles.badgeText}>{itemCount}</Text>
+                                    </View>
+                                )}
+                            </View>
+                            <Text style={[styles.tabLabel, { color, fontFamily }]}>{label}</Text>
                         </TouchableOpacity>
                     );
                 })}
             </View>
+            <TouchableOpacity
+                onPress={() => navigation.navigate('Cart')}
+                style={[styles.centerButton, { backgroundColor: colors.accent, shadowColor: colors.accent }]}
+            >
+                <Icon name={icons['Cart'][0]} size={32} color="#FFFFFF" />
+            </TouchableOpacity>
         </View>
     );
 };
