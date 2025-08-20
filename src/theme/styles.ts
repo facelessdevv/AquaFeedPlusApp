@@ -1036,13 +1036,9 @@ export const supportScreenStyles = (colors: any) => StyleSheet.create({
         alignItems: 'center',
         marginBottom: hp('1.5%'),
     },
-    infoText: {
-        fontFamily: 'IRANSans(FaNum)_Medium',
-        fontSize: hp('1.8%'),
-        color: colors.textSecondary,
-        marginRight: wp('3%'),
-        flex: 1,
-        textAlign: 'right',
+    linkText: {
+        color: colors.primary,
+        textDecorationLine: 'underline',
     },
     mapButton: {
         backgroundColor: colors.primary,
@@ -1074,6 +1070,31 @@ export const supportScreenStyles = (colors: any) => StyleSheet.create({
         fontFamily: 'IRANSans(FaNum)_Bold',
         fontSize: hp('2%'),
         color: colors.textPrimary,
+    },
+    infoText: {
+        fontFamily: 'IRANSans(FaNum)_Medium',
+        fontSize: hp('1.8%'),
+        color: colors.textSecondary,
+        marginRight: wp('3%'),
+        flex: 1,
+        textAlign: 'right',
+    },
+    phoneRowContainer: {
+        flexDirection: 'row-reverse',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+    },
+    phoneLinkText: {
+        fontFamily: 'IRANSans(FaNum)_Medium',
+        fontSize: hp('1.8%'),
+        color: colors.primary,
+        textDecorationLine: 'underline',
+    },
+    phoneSeparator: {
+        fontFamily: 'IRANSans(FaNum)_Medium',
+        fontSize: hp('1.8%'),
+        color: colors.textSecondary,
+        marginHorizontal: wp('1%'),
     },
 });
 
@@ -1108,7 +1129,7 @@ export const salesAgentsScreenStyles = (colors: any) => StyleSheet.create({
         backgroundColor: colors.background,
     },
     header: {
-        flexDirection: 'row-reverse',
+        flexDirection: 'row',
         alignItems: 'center',
         padding: wp('4%'),
         backgroundColor: colors.surface,
@@ -1121,7 +1142,6 @@ export const salesAgentsScreenStyles = (colors: any) => StyleSheet.create({
         color: colors.textPrimary,
         flex: 1,
         textAlign: 'center',
-        marginRight: -wp('8%'),
     },
     listContainer: {
         padding: wp('4%'),
@@ -1156,7 +1176,7 @@ export const departmentsScreenStyles = (colors: any) => StyleSheet.create({
         backgroundColor: colors.background,
     },
     header: {
-        flexDirection: 'row-reverse',
+        flexDirection: 'row',
         alignItems: 'center',
         padding: wp('4%'),
         backgroundColor: colors.surface,
@@ -1169,7 +1189,6 @@ export const departmentsScreenStyles = (colors: any) => StyleSheet.create({
         color: colors.textPrimary,
         flex: 1,
         textAlign: 'center',
-        marginRight: -wp('8%'),
     },
     listContent: {
         padding: wp('4%'),
@@ -1202,7 +1221,7 @@ export const feedbackScreenStyles = (colors: any) => StyleSheet.create({
         backgroundColor: colors.background,
     },
     header: {
-        flexDirection: 'row-reverse',
+        flexDirection: 'row',
         alignItems: 'center',
         padding: wp('4%'),
         backgroundColor: colors.surface,
@@ -1215,7 +1234,6 @@ export const feedbackScreenStyles = (colors: any) => StyleSheet.create({
         color: colors.textPrimary,
         flex: 1,
         textAlign: 'center',
-        marginRight: -wp('8%'),
     },
     scrollContainer: {
         padding: wp('5%'),

@@ -1,7 +1,16 @@
+export interface phonenumbers {
+    id: string;
+    value: string;
+}
+
 export const MAIN_OFFICE_DATA = {
     address: 'تهران ، خیابان آزادی ، تقاطع اسکندری شمالی ، ساختمان 241 طبقه 12 واحد 3',
     postalCode: '۶۱۳۹۱-۹۶۳۳۱',
-    phone: '02165012098 - 02165012102 - 02165012108',
+    phonenumbers: [
+        {id: '1' , value: '02165012108'},
+        {id: '2' , value: '02165012102'},
+        {id: '3' , value: '02165012098'}
+    ],
     fax: '۰۶۱-۳۲۲۲۲۲۲۳',
     email: 'info@aquafeedplus.org',
     location: {

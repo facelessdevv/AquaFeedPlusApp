@@ -29,7 +29,7 @@ const DepartmentsScreen = () => {
     const renderItem = ({ item }: { item: typeof DEPARTMENTS_DATA[0] }) => (
         <View style={styles.departmentCard}>
             <Text style={styles.departmentName}>{item.name}</Text>
-            <TouchableOpacity style={styles.emailButton} onPress={() => handleEmailPress(item.email)}>
+            <TouchableOpacity style={styles.emailButton} onPress={() => Linking.openURL(`mailto:${item.email}`)}>
                 <Icon name="mail-outline" size={24} color="#FFFFFF" />
             </TouchableOpacity>
         </View>
@@ -39,7 +39,7 @@ const DepartmentsScreen = () => {
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <Icon name="arrow-forward-outline" size={28} color={colors.textPrimary} />
+                    <Icon name="arrow-back-outline" size={28} color={colors.textPrimary} />
                 </TouchableOpacity>
                 <Text style={styles.headerTitle}>ارتباط با واحدها</Text>
             </View>

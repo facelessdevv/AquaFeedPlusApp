@@ -17,7 +17,7 @@ const SalesAgentsScreen = () => {
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <Icon name="arrow-forward-outline" size={28} color={colors.textPrimary} />
+                    <Icon name="arrow-back-outline" size={28} color={colors.textPrimary} />
                 </TouchableOpacity>
                 <Text style={styles.headerTitle}>عاملین فروش</Text>
             </View>
