@@ -23,6 +23,7 @@ export const allNews: NewsArticle[] = [
     mainImage: 'https://aquafeedplus.org/wp-content/uploads/2025/03/1002922a-8d1d-4aee-8a66-12dd064425c4-300x151-1.jpg',
     galleryImages: ['https://aquafeedplus.org/wp-content/uploads/2025/03/1002922a-8d1d-4aee-8a66-12dd064425c4-300x151-1.jpg'],
     content: [
+        
         { 
             type: 'paragraph',
             value: 'به گزارش روابط عمومی آکوافید پلاس، ناصر خیامی، مدیر فروش آکوافیدپلاس، در گفت‌وگو با خبرنگار فارس اظهار داشت:'

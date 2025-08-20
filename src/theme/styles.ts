@@ -892,7 +892,10 @@ export const productDetailFooterStyles = (colors: any) => StyleSheet.create({
 });
 
 export const priceListScreenStyles = (colors: any) => StyleSheet.create({
-    container: { flex: 1, backgroundColor: colors.background },
+    container: { 
+        flex: 1, 
+        backgroundColor: colors.background 
+    },
     header: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -909,61 +912,87 @@ export const priceListScreenStyles = (colors: any) => StyleSheet.create({
         textAlign: 'center',
     },
     listContent: {
-    paddingVertical: hp('1%'),
-},
+        paddingBottom: hp('2%'),
+        paddingHorizontal: wp('4%'),
+        paddingTop: hp('2%')
+    },
+    tableContainer: {
+        backgroundColor: colors.surface,
+        borderRadius: metrics.borderRadius,
+        ...metrics.cardShadow,
+        overflow: 'hidden',
+        marginTop: hp('2%'),
+    },
 
-tableContainer: {
-    backgroundColor: colors.surface,
-    borderRadius: metrics.borderRadius,
-    ...metrics.cardShadow,
-    overflow: 'hidden',
-    marginHorizontal: wp('4%'),
-    marginTop: hp('2%'),
-},
+    tableHeaderRow: {
+        flexDirection: 'row-reverse',
+        backgroundColor: colors.primary,
+        paddingVertical: hp('1.2%'),
+        paddingHorizontal: wp('3%'),
+        alignItems: 'center',
+        borderRadius: metrics.borderRadius,
+    },
+    tableHeaderCell: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2%'),
+        color: '#FFFFFF',
+        textAlign: 'right',
+    },
 
-tableHeaderRow: {
-    flexDirection: 'row-reverse',
-    backgroundColor: colors.primary,
-    paddingVertical: hp('1.2%'),
-    paddingHorizontal: wp('3%'),
-    alignItems: 'center',
-},
-
-tableHeaderCell: {
-    fontFamily: 'IRANSans(FaNum)_Bold',
-    fontSize: hp('2%'),
-    color: '#FFFFFF',
-    textAlign: 'right',
-},
-
-tableRow: {
-    flexDirection: 'row-reverse',
-    paddingVertical: hp('1%'),
-    paddingHorizontal: wp('3%'),
-    borderBottomWidth: 1,
-    borderBottomColor: colors.border,
-    alignItems: 'center',
-},
-
-tableCell: {
-    fontFamily: 'IRANSans(FaNum)_Medium',
-    fontSize: hp('1.5%'),
-    color: colors.textPrimary,
-    textAlign: 'right',
-    alignSelf: 'center'
-},
-
-viewProductButton: {
-    backgroundColor: colors.accent,
-    paddingVertical: hp('1%'),
-    paddingHorizontal: wp('2.5%'),
-    borderRadius: metrics.borderRadius,
-    alignItems: 'center',
-},
-
-viewProductButtonText: {
-    fontFamily: 'IRANSans(FaNum)_Bold',
-    fontSize: hp('1.6%'),
-    color: '#FFFFFF',
-},
+    tableRow: {
+        flexDirection: 'row-reverse',
+        paddingVertical: hp('1.2%'),
+        paddingHorizontal: wp('3%'),
+        borderBottomWidth: 1,
+        borderBottomColor: colors.border,
+        alignItems: 'center',
+        backgroundColor: colors.surface,
+        borderRadius: metrics.borderRadius,
+        marginTop: wp('1%')
+    },
+    tableCell: {
+        fontFamily: 'IRANSans(FaNum)_Medium',
+        fontSize: hp('1.6%'),
+        color: colors.textPrimary,
+        textAlign: 'right',
+        alignSelf: 'center',
+        paddingHorizontal: wp('2%'),
+        lineHeight: hp('3%')
+    },
+    viewProductButton: {
+        backgroundColor: colors.accent,
+        paddingVertical: hp('1%'),
+        paddingHorizontal: wp('2%'),
+        borderRadius: metrics.borderRadius,
+        alignItems: 'center',
+    },
+    viewProductButtonText: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('1.6%'),
+        color: '#FFFFFF',
+    },
+    footer: {
+        padding: wp('4%'),
+        backgroundColor: colors.surface,
+        borderTopWidth: 1,
+        borderTopColor: colors.border,
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+    },
+    pdfButton: {
+        backgroundColor: colors.primary,
+        paddingVertical: hp('1.5%'),
+        borderRadius: metrics.borderRadius,
+        alignItems: 'center',
+        flexDirection: 'row-reverse',
+        justifyContent: 'center',
+    },
+    pdfButtonText: {
+        fontFamily: 'IRANSans(FaNum)_Bold',
+        fontSize: hp('2%'),
+        color: '#FFFFFF',
+        marginRight: wp('2%'),
+    },
 });

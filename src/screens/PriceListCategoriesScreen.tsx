@@ -26,9 +26,6 @@ const PriceListCategoriesScreen = () => {
             onPress={() => handleCategoryPress(item.id, item.name)}
         >
             <ImageBackground source={{ uri: item.image }} style={styles.cardImageBackground}>
-                <View style={styles.cardOverlay}>
-                    <Text style={styles.cardTitle}>{item.name}</Text>
-                </View>
             </ImageBackground>
         </TouchableOpacity>
     );

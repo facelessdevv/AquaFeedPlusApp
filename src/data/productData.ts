@@ -41,6 +41,7 @@ export interface Category {
   id: string;
   name: string;
   image: string;
+  priceListPdfUrl?: string;
   subCategories: SubCategory[];
 }
 
@@ -49,6 +50,7 @@ export const productCategories: Category[] = [
     id: 'cat1',
     name: 'خوراک ماهی قزل آلای رنگین کمان',
     image: 'https://aquafeedplus.org/wp-content/uploads/2025/02/t111.webp',
+    priceListPdfUrl: 'https://aquafeedplus.org/wp-content/uploads/2025/02/aquafeed_rainbow-trout_pricelist_FA-1.pdf',
     subCategories: [
       {
         id: 'sub1-1',
@@ -186,6 +188,7 @@ export const productCategories: Category[] = [
     id: 'cat2',
     name: 'خوراک کپور معمولی',
     image: 'https://aquafeedplus.org/wp-content/uploads/2025/02/c111.webp',
+    priceListPdfUrl: 'https://aquafeedplus.org/wp-content/uploads/2025/02/aquafeed_common-carp_pricelist_FA.pdf',
     subCategories: [
       {
         id: 'sub2-1',
@@ -323,6 +326,7 @@ export const productCategories: Category[] = [
     id: 'cat3',
     name: 'خوراک ماهیان خاویاری',
     image: 'https://aquafeedplus.org/wp-content/uploads/2025/02/s111.webp',
+    priceListPdfUrl: 'https://aquafeedplus.org/wp-content/uploads/2025/02/aquafeed_sturgeon_pricelist_FA.pdf',
     subCategories: [
       {
         id: 'sub3-1',
