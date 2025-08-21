@@ -66,7 +66,7 @@ const SupportScreen = () => {
                         <View style={[styles.infoText, styles.phoneRowContainer]}>
                             {MAIN_OFFICE_DATA.phonenumbers.map((phone, index) => (
                                 <React.Fragment key={phone.id}>
-                                    <TouchableOpacity onPress={() => handleLinkPress(`tel:${phone.value}`)}>
+                                    <TouchableOpacity onPress={() => Linking.openURL(`tel:${phone.value}`)}>
                                         <Text style={styles.phoneLinkText}>{phone.value}</Text>
                                     </TouchableOpacity>
                                     {index < MAIN_OFFICE_DATA.phonenumbers.length - 1 && (
