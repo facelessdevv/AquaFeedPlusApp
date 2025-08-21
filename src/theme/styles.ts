@@ -533,7 +533,7 @@ export const profileScreenStyles = (colors: any) => StyleSheet.create({
         fontSize: hp('3%'),
         fontFamily: 'IRANSans(FaNum)_Bold',
         color: colors.textPrimary,
-        textAlign: 'right',
+        textAlign: 'center',
         marginBottom: hp('4%'),
     },
     settingRow: {
